@@ -1,0 +1,43 @@
+name: wing_pedal_config
+description: WING Pedal Configuration App - BLE control for ESP32 mixer pedal
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # BLE communication
+  flutter_blue_plus: ^1.32.0
+  
+  # State management
+  provider: ^6.1.1
+
+  # HTTP for OTA version check and binary download
+  http: ^1.2.0
+  
+  # Permissions
+  permission_handler: ^11.1.0
+  
+  # WiFi scanning
+  wifi_scan: ^0.4.1
+  
+  # UI
+  cupertino_icons: ^1.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+
+flutter:
+  uses-material-design: true
+
+flutter_launcher_icons:
+  android: true
+  image_path: "assets/icon.png"
+  adaptive_icon_background: "#1a1a1a"
+  adaptive_icon_foreground: "assets/icon.png"
