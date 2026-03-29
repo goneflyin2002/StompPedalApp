@@ -1,0 +1,32 @@
+name: Build iOS IPA
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build_ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.27.0'
+      - run: flutter pub get
+      - run: flutter build ios --release --no-codesign
+      - run: |
+          cd build/ios/iphoneos
+          mkdir Payload
+          cp -r Runner.app Payload/
+          zip -r StompPedalApp.ipa Payload/
+      - uses: actions/upload-artifact@v3
+        with:
+          name: StompPedalApp
+          path: build/ios/iphoneos/StompPedalApp.ipa
+```
+
+Save and close. Then:
+```
+git add .
+git commit -m "Add iOS build workflow"
+git push
