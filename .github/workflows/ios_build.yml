@@ -23,10 +23,3 @@ jobs:
         with:
           name: StompPedalApp
           path: build/ios/iphoneos/StompPedalApp.ipa
-```
-
-Save and close. Then:
-```
-git add .
-git commit -m "Add iOS build workflow"
-git push
