@@ -19,7 +19,7 @@ Built on the **ESP32-C5** with a 3.5" TFT display, configurable via a Flutter ap
 | LED B Tap | Blue — GPIO 28 |
 | LED B Mute | Red — GPIO 27 |
 
-**Arduino IDE partition:** No FS, 4MB with 2MB APP × 2 (required for OTA)
+**Arduino IDE partition:** No FS, 8MB with SPIFFS, 3M APP, 1.5M spiffs (required for OTA)
 
 ---
 
